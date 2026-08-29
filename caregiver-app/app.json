@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "Caregiver App",
+    "slug": "caregiver-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": {
+      "package": "com.careConnect.caregiverapp",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
+    },
+    "ios": {
+      "bundleIdentifier": "com.careConnect.caregiverapp"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "334869db-2976-4796-b455-b9f88f665cdb"
+      }
+    },
+    "owner": "jananisps-team"
+  }
+}
