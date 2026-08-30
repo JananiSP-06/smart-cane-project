@@ -55,6 +55,4 @@ Content-Type: application/json
 
 This needs either an API key with Firestore REST access enabled, or (more
 securely) routing the write through a small Cloud Function/HTTP endpoint so
-the cane never holds a credential with broad database access. Happy to wire
-this into your existing ESP32 sketch if you want — just say the word.
-
+the cane never holds a credential with broad database access. 
