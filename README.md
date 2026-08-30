@@ -62,20 +62,21 @@ smart-cane-project/
 ├── README.md                      ← you are here
 ├── caregiver-app/                 ← Expo React Native app
 │   ├── App.js
+│   ├── eas.json
+│   ├── metro.config.js
 │   ├── screens/
 │   │   ├── LoginScreen.js
 │   │   ├── SignupScreen.js
+│   │   ├── SettingsScreen.js
 │   │   ├── ProfileSetupScreen.js
 │   │   ├── AlertsScreen.js
 │   │   └── MapScreen.js
-│   ├── functions/                 ← Firebase Cloud Function (push notifications)
 │   ├── package.json
 │   ├── app.json
 │   ├── firebaseConfig.example.js  ← copy to firebaseConfig.js and fill in
 │   └── .gitignore
 ├── cane-firmware/                 ← ESP32 code
 │   ├── cane.ino
-│   ├── secrets.example.h          ← copy to secrets.h and fill in
 │   └── README.md                  ← wiring + firmware-specific notes
 └── docs/
     └── getting-started.md         ← end-to-end setup guide for a new user
@@ -91,8 +92,8 @@ smart-cane-project/
 | Cane firmware | ESP32, ultrasonic (HC-SR04 or similar), Arduino framework |
 | Messaging relay | Telegram Bot API |
 | Caregiver app | React Native (Expo), React Navigation |
-| Backend | Firebase Authentication, Firestore, Cloud Functions (FCM push) |
-| Maps | react-native-maps + Google Maps SDK |
+| Backend | Firebase Authentication, Firestore |
+| Maps | react-native-webview + Leaflet.js (OpenStreetMap tiles — no API key required) |
 
 ---
 
@@ -102,7 +103,7 @@ smart-cane-project/
 caregivers/{uid}     - name, email, phone, pushToken
 patients/{uid}        - keyed by the caregiver's uid (1 caregiver : 1 patient for MVP)
                          name, age, medicalNotes, emergencyContact, caneId
-alerts/{autoId}       - patientId (= caregiver uid), message, latitude, longitude,
+alerts/{autoId}       - patientId (= caregiver uid), message, location,
                          timestamp (ms since epoch), status
 ```
 
